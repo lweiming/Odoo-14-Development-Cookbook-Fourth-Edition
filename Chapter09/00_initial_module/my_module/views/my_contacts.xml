@@ -1,4 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
+    <act_window
+            id="action_all_customers"
+            name="All customers"
+            res_model="res.partner"
+            view_mode="tree,form"
+            domain="[('customer_rank', '>', 0)]"
+            context="{'default_customer_rank': 1}"
+            limit="20"/>
 
+    <menuitem id="menu_custom_top_level"
+              name="My App menu"
+              web_icon="my_module,static/description/icon.png"/>
+    <menuitem id="menu_all_customers"
+              parent="menu_custom_top_level"
+              action="action_all_customers"
+              sequence="10"/>
 </odoo>
